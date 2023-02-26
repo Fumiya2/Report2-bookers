@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'bookers' => 'books#new'
+  get 'books/new'
+  resources :books
   get 'bookers/index'
   get 'bookers/show'
   get 'bookers/edit'
