@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'bookers/new'
+  get 'bookers' => 'books#new'
   get 'bookers/index'
   get 'bookers/show'
   get 'bookers/edit'
