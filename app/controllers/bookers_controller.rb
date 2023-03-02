@@ -6,8 +6,9 @@ class BookersController < ApplicationController
   
   def create
     @book = Book.new(book_params)
-    book.save
-    redirect_to action: "index"
+    @book.save
+    @books = Book.all.order(id: :asc)
+    redirect_to "/books/#{@book.id}}"
   end
 
   def index

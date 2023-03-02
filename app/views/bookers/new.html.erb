@@ -1,18 +1,29 @@
 <h1>Books</h1>
-  <%= form_with model: Book.new do |f| %>
-  <table>
-   <body>
-    <thead>
+<table>
+  <thead>
+   <tr>
+    <th>Title</th>
+    <th>Body</th>
+    <th colspan="3"></th>
+   </tr>
+  </thead>
+ <% @books.each do |book| %>
+   <tbody>
     <tr>
-     <th>Title</th>
-     <th>Body</th> 
-     <th>colspsn="3"</th>
+     <td><%= book.title %></td>
+     <td><%= book.body %></td>
+     <td><%= link_to"Show", book_path(@book.id) %></td>
+     <td><%= link_to"Edit", edit_book_path(@book) %></td>
+     <td><%= link_to"Destroy", book, "data-confim" => "Are you sure?"  %></td>
     </tr>
-   </thead>
-   </body>
-  </table>
+   </tbody>
+ <% end %>
+</table>
+ 
+  
 
   <h1>New book</h1>  
+  <%= form_with model: Book.new do |f| %>
      <h4>Title</h4>
      <%= f.text_field :title %>
      <h4>Body</h4>
