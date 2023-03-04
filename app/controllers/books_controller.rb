@@ -1,4 +1,4 @@
-class BookersController < ApplicationController
+class BooksController < ApplicationController
   
   def new
     @book = Book.new
@@ -7,8 +7,7 @@ class BookersController < ApplicationController
   def create
     @book = Book.new(book_params)
     @book.save
-    @books = Book.all.order(id: :asc)
-    redirect_to "/books/#{@book.id}}"
+    redirect_to "books"
   end
 
   def index
