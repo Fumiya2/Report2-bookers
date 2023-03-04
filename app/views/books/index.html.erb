@@ -18,7 +18,13 @@
         </tbody>
     </table>
      <h2>New Book</h2>
-      <%= form_with model:book.index do |f| %>
+     <%= form_with model: Book.new do |f| %>
       
-    
+      <h4>Title</h4><%= f.text_field :title %>
+      
+      <h4>Body</h4><%= f.text_area :body %>
+      
+      <br><%= f.submit 'Create Book' %><br>
+      
+     <% end %>
     </body>
