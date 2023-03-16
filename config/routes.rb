@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'post_images/new'
+  get 'post_images/index'
+  get 'post_images/show'
+  get 'post_images/edit'
   resources :books
   root to: 'homes#top'
 
